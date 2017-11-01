@@ -1,5 +1,4 @@
-import { Component, CssClassMap, Element, Prop } from '@stencil/core';
-
+import { Component, Element, Prop } from '@stencil/core';
 import { getElementClassObject } from '../../utils/theme';
 
 /**
@@ -184,9 +183,7 @@ export class Button {
 
     const decorator = (this.strong ? 'strong' : null);
 
-    const hostClasses = getElementClassObject(this.el.classList);
-
-    const elementClasses: CssClassMap = []
+    const elementClasses: string[] = []
       .concat(
         getButtonClassList(buttonType, mode),
         getClassList(buttonType, shape, mode),
@@ -195,17 +192,13 @@ export class Button {
         getClassList(buttonType, decorator, mode),
         getStyleClassList(mode, this.color, buttonType, this.outline, this.clear, this.solid),
         getItemClassList(this.itemButton, size)
-      )
-      .reduce((prevValue, cssClass) => {
-        prevValue[cssClass] = true;
-        return prevValue;
-      }, {});
+      );
 
     const TagType = this.href ? 'a' : 'button';
 
     const buttonClasses = {
-      ...hostClasses,
-      ...elementClasses
+      ...getElementClassObject(this.el.classList),
+      ...getElementClassObject(elementClasses)
     };
 
     return (
