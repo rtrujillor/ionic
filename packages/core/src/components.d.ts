@@ -318,16 +318,11 @@ declare global {
           itemButton?: boolean,
           href?: string,
           buttonType?: string,
-          large?: boolean,
-          small?: boolean,
-          default?: boolean,
+          size?: string,
           disabled?: boolean,
-          outline?: boolean,
-          clear?: boolean,
-          solid?: boolean,
+          fill?: string,
           round?: boolean,
-          block?: boolean,
-          full?: boolean,
+          span?: string,
           strong?: boolean
       }
   }
