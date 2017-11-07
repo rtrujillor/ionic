@@ -20,13 +20,13 @@ import { getElementClassObject } from '../../utils/theme';
   *  <ion-button color="dark">Dark</ion-button>
   *
   *  <!-- Shapes -->
-  *  <ion-button span="full">Full Button</ion-button>
-  *  <ion-button span="block">Block Button</ion-button>
+  *  <ion-button expand="full">Full Button</ion-button>
+  *  <ion-button expand="block">Block Button</ion-button>
   *  <ion-button round>Round Button</ion-button>
   *
   *  <!-- Outline -->
-  *  <ion-button span="full" fill="outline">Outline + Full</ion-button>
-  *  <ion-button span="block" fill="outline">Outline + Block</ion-button>
+  *  <ion-button expand="full" fill="outline">Outline + Full</ion-button>
+  *  <ion-button expand="block" fill="outline">Outline + Block</ion-button>
   *  <ion-button round fill="outline">Outline + Round</ion-button>
   *
   *  <!-- Icons -->
@@ -103,7 +103,7 @@ export class Button {
    * @input {string} Set to `"block"` for a full-width button or to `"full"` for a full-width button
    * without left and right borders.
    */
-  @Prop() span: ButtonSpan = '';
+  @Prop() expand: ButtonExpand = '';
 
   /**
    * @input {boolean} If true, activates a button with a heavier font weight.
@@ -131,18 +131,18 @@ export class Button {
       buttonType,
       itemButton,
       color,
+      expand,
       fill,
       mode,
       round,
       size,
-      span,
       strong
     } = this;
 
     const elementClasses: string[] = []
       .concat(
         getButtonClassList(buttonType, mode),
-        getClassList(buttonType, span, mode),
+        getClassList(buttonType, expand, mode),
         getClassList(buttonType, size, mode),
         getClassList(buttonType, round ? 'round' : null, mode),
         getClassList(buttonType, strong ? 'strong' : null, mode),
@@ -235,4 +235,4 @@ function getItemClassList(itemButton: boolean, size: string) {
 // TODO Remove empty string defaults once Stencil supports union types.
 export type ButtonFill = 'clear' | 'solid' | 'outline' | 'default';
 export type ButtonSize = 'small' | 'large' | '';
-export type ButtonSpan = 'block' | 'full' | '';
+export type ButtonExpand = 'block' | 'full' | '';

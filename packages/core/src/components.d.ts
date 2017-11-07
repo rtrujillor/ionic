@@ -322,7 +322,7 @@ declare global {
           disabled?: boolean,
           fill?: string,
           round?: boolean,
-          span?: string,
+          expand?: string,
           strong?: boolean
       }
   }
