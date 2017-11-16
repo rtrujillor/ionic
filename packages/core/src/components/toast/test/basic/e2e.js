@@ -1,5 +1,5 @@
 const { register, navigate, Page } = require('../../../../../scripts/e2e');
-const testPageURL = 'http://localhost:3333/src/components/toast/test/basic';
+const testPageURL = 'http://e2e-server/src/components/toast/test/basic';
 
 describe('toast: basic', () => {
 

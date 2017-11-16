@@ -1,5 +1,5 @@
 const { register, navigate, Page } = require('../../../../../scripts/e2e');
-const testPageURL = 'http://localhost:3333/src/components/modal/test/basic';
+const testPageURL = 'http://e2e-server/src/components/modal/test/basic';
 
 describe('modal: basic', () => {
 

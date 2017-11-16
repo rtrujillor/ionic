@@ -78,7 +78,10 @@ async function run() {
     slow: 2000
   });
 
-  driver = new webdriver.Builder().forBrowser('chrome').build();
+  driver = new webdriver.Builder()
+    .forBrowser('chrome')
+    .usingServer('http://localhost:4444/wd/hub')
+    .build();
 
   processCommandLine();
 
