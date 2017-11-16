@@ -28,6 +28,7 @@
     "tsc": "./node_modules/.bin/tsc -p .",
     "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\"",
     "e2e": "node ./scripts/e2e",
+    "e2e.init": "npm run build && docker-compose -f scripts/e2e/docker-compose.yml up",
     "snapshot": "node ./scripts/e2e --snapshot",
     "test": "jest --no-cache",
     "test.watch": "jest --watch --no-cache",
