@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'basic-inputs', loadChildren: 'app/basic-inputs/basic-inputs.module#BasicInputsModule' },
-  { path: 'home', loadChildren: 'app/home/home.module#HomeModule' }
+  { path: 'basic-inputs', loadChildren: 'app/basic-inputs-page/basic-inputs-page.module#BasicInputsPageModule' },
+  { path: 'home', loadChildren: 'app/home-page/home-page.module#HomePageModule' }
 ];
 
 @NgModule({
