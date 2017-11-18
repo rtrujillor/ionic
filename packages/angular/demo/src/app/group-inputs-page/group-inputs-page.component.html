@@ -9,7 +9,18 @@
     </ion-col>
   </ion-row>
   <ion-row>
-    <ion-col></ion-col>
+    <ion-col>
+        <input id="stdBeef" type="radio" value="beef" [(ngModel)]="radioValue"/>
+        <label for="stdBeef">Carne Asada</label>
+        <input id="stdTongue" type="radio" value="tongue" [(ngModel)]="radioValue"/>
+        <label for="stdTongue">Lengua</label>
+        <input id="stdBrains" type="radio" value="brains" [(ngModel)]="radioValue"/>
+        <label for="stdBrains">Sesos</label>
+        <input id="stdTripe" type="radio" value="tripe" [(ngModel)]="radioValue"/>
+        <label for="stdTripe">Tripa</label>
+        <input id="stdChicken" type="radio" value="chicken" [(ngModel)]="radioValue"/>
+        <label for="stdChicken">Pollo</label>
+    </ion-col>
     <ion-col>
       Value: <span id="radioOutput">{{radioValue}}</span>
     </ion-col>
